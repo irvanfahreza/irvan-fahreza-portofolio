@@ -26,10 +26,10 @@ const Footer = () => {
           </div>
 
           <div className="social-links">
-            <a href="https://github.com/irvanfahreza" className="social-icon" aria-label="GitHub">
+            <a href="https://github.com/irvanfahreza" className="social-icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
               <Github size={24} />
             </a>
-            <a href="https://www.linkedin.com/in/irvan-fahreza-170256166/" className="social-icon" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/irvan-fahreza-170256166/" className="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
               <Linkedin size={24} />
             </a>
             <a href="mailto:irvanfahreza45@gmail.com" className="social-icon" aria-label="Email">
