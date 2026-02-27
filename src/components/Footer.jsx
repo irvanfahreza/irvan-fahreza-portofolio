@@ -26,7 +26,7 @@ const Footer = () => {
           </div>
 
           <div className="social-links">
-            <a href="#" className="social-icon" aria-label="GitHub">
+            <a href="https://github.com/irvanfahreza" className="social-icon" aria-label="GitHub">
               <Github size={24} />
             </a>
             <a href="https://www.linkedin.com/in/irvan-fahreza-170256166/" className="social-icon" aria-label="LinkedIn">
