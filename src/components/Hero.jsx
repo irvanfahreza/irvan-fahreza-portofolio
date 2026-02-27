@@ -208,6 +208,7 @@ const Hero = () => {
           }
           .hero-actions {
             flex-direction: column;
+            align-items: center;
           }
         }
       `}</style>

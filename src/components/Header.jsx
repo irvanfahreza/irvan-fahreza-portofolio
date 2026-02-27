@@ -14,6 +14,26 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false); // Close menu first
+
+    // Wait for the exit animation to finish before calculating position and scrolling
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    }, 100); // 300ms matches the typical exit animation duration
+  };
+
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Experience', href: '#experience' },
@@ -44,7 +64,7 @@ const Header = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <a href={link.href}>{link.name}</a>
+                <a href={link.href} onClick={(e) => handleNavClick(e, link.href)}>{link.name}</a>
               </motion.li>
             ))}
           </ul>
@@ -68,7 +88,7 @@ const Header = () => {
             <ul>
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} onClick={() => setIsMobileMenuOpen(false)}>
+                  <a href={link.href} onClick={(e) => handleNavClick(e, link.href)}>
                     {link.name}
                   </a>
                 </li>
